@@ -1,8 +1,14 @@
 import { useState } from "react";
 
-const FunctionCounter = (props) => {
+const FunctionCounter = () => {
 
-    const [count, setCount] = useState (0)
+    const [count, setCount] = useState (0);
+
+    let stock = 5;
+
+    if (count < 1) {
+        console.log("F")
+    }
 
     const decrement = () => {
         if (count > 0) {
