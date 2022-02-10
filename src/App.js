@@ -12,7 +12,7 @@ function App() {
       <Navbar title="ecommerce" />
     </div>
     <ItemListContainer greeting='Hola, soy el contenido!'/>
-    <FunctionCounter />
+    
     
     </>
   );
