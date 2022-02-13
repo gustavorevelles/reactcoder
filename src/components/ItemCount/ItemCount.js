@@ -1,4 +1,10 @@
 import { useState } from "react";
+import { Container } from "react-bootstrap";
+import { Row } from "react-bootstrap";
+import { Button } from "react-bootstrap";
+import { InputGroup } from "react-bootstrap";
+import { FormControl } from "react-bootstrap";
+
 
 const ItemCount = ({stock = 1, initial = 1, onAdd}) => {
     
@@ -16,21 +22,18 @@ const ItemCount = ({stock = 1, initial = 1, onAdd}) => {
     }
 
     return (
-        <div align="center">
-            <table>
-                <tbody>
-                    <tr>
-                        <td align="left"><button className="" onClick={()=>decrement()} >-</button></td>
-                        <td align="center">{quantity}</td>
-                        <td align="right"><button className="" onClick={()=>increment()} >+</button></td>
-                    </tr>
-                    <tr>
-                        <td align="center" colSpan="5"><button className="" onClick={()=>onAdd(quantity)} >Agregar</button></td>
-                    </tr>
-                </tbody>
-            </table>
-    
-        </div>
+        <Container>
+            <InputGroup>
+            <FormControl placeholder={quantity}/>
+            <Button variant="outline-secondary" onClick={()=>decrement()}>-</Button>
+            <Button variant="outline-secondary" onClick={()=>increment()}>+</Button>
+            <Row>
+                <Button  onClick={()=>onAdd(quantity)} >Agregar</Button>
+            </Row>
+        </InputGroup>
+        </Container>
+
+        
     )
 }
 

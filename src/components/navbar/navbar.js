@@ -1,6 +1,8 @@
 import './NavBar.css'
 import Button from '../Button/Button'
 import CartWidget from '../CartWidget/CartWidget'
+import { Navbar, NavbarBrand, Nav, NavLink } from "react-bootstrap";
+import { Container } from "react-bootstrap";
 
 const NavBar = ({ title, ...rest }) => { //{ title: 'ecommerce ', color='red'}
     // const { title, color } = props 
@@ -21,37 +23,18 @@ const NavBar = ({ title, ...rest }) => { //{ title: 'ecommerce ', color='red'}
     }
     
     return (
-      <nav className='navbar navbar-expand-lg navbar-light bg-light'>
-          <a className="navbar-brand">{title}</a>
-            <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                <span className="navbar-toggler-icon"></span>
-            </button>
-            <div className="collapse navbar-collapse">
-                <ul className="navbar-nav">
-                <li className="nav-item active">
-                    <Button handleClick={handleHome}>
-                    Home
-                    </Button>
-                </li>
-                <li className="nav-item">
-                <Button handleClick={handleEsquis}>
-                    Esquís
-                    </Button>
-                </li>
-                <li className="nav-item">
-                <Button handleClick={handleTablas}>
-                    Tablas
-                    </Button>
-                </li>
-                <li className="nav-item">
-                    <Button handleClick={handleBotas}>
-                    Botas
-                    </Button>
-                </li>
-                </ul>
-            </div>
+        <Navbar bg="light">
+            <Container>
+            <Navbar.Brand href="#home">Tienda Xplora</Navbar.Brand>
+            <Nav className="me-auto">
+                <Nav.Link>Home</Nav.Link>
+                <Nav.Link>Esquís</Nav.Link>
+                <Nav.Link>Tablas</Nav.Link>
+                <Nav.Link>Botas</Nav.Link>
+            </Nav>
             <CartWidget />
-      </nav>
+            </Container>
+        </Navbar>
     )
 }
 
